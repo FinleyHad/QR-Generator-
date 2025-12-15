@@ -91,3 +91,17 @@ For open source projects, say how it is licensed.
 
 ## Project status
 If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+
+
+## QR Generation Demonstration
+
+This section demonstrates the QR generation process for the five required strings.
+
+### Demo Files
+- [demo_1.txt](demos/demo_1.txt) – String: "known"
+- [demo_2.txt](demos/demo_2.txt) – String: "We've succeeded!"
+- [demo_3.txt](demos/demo_3.txt) – String: "~i256_~_aA&fi"
+- [demo_4.txt](demos/demo_4.txt) – String: "From a to o..."
+- [demo_5.txt](demos/demo_5.txt) – String: "Sugarplum_Fairy_Nightmare"
+
+Each file contains logged steps of encoding, ECC addition, matrix assembly, and masking.
