@@ -3,7 +3,7 @@ import os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from qr.utils.logging_config import setup_logger
-from qr.generate_qr_matrix import generate_qr_matrix
+from qr.generate import generate_qr_matrix
 
 strings = [
     "known",

@@ -1,7 +1,7 @@
 import logging
 import sys
 
-def setup_logging(log_file="qr_generation.log"):
+def setup_logger(log_file="qr_generation.log"):
     logger = logging.getLogger("qr_generator")
     logger.setLevel(logging.DEBUG)
 

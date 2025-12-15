@@ -1,8 +1,8 @@
 from qr.utils.logging_config import setup_logger
 from qr.encoding.encode import encode_string
-from qr.ecc.reedsolo_wrapper import add_ecc
+from qr.ecc.reed_solomon import add_ecc
 from qr.matrix.layout import create_base_matrix, place_data
-from qr.masking.mask import apply_mask
+from qr.masking.mask0 import apply_mask
 
 logger = setup_logger()
 
