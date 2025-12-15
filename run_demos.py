@@ -27,7 +27,7 @@ def run_demos():
         # Capture logs into file
         with open(f"demos/demo_{idx}.txt", "w") as f:
             # You may redirect log output to file here
-            pass  # Placeholder – you'll need to capture logs properly
+            f.write(strings[idx-1] + '\n')
 
 if __name__ == "__main__":
     run_demos()
