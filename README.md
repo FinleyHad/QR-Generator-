@@ -105,3 +105,5 @@ This section demonstrates the QR generation process for the five required string
 - [demo_5.txt](demos/demo_5.txt) – String: "Sugarplum_Fairy_Nightmare"
 
 Each file contains logged steps of encoding, ECC addition, matrix assembly, and masking.
+
+
