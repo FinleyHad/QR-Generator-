@@ -1,3 +1,4 @@
+#Top level orchestration of the entier qr code 
 from qr.utils.logging_config import setup_logger
 from qr.encoding.encode import encode_string
 from qr.ecc.reed_solomon import add_ecc
