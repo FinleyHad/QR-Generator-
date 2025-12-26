@@ -1,0 +1,7 @@
+body { font-family: system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial; background:#f8f9fb; color:#222; }
+main { max-width:720px; margin:36px auto; padding:24px; background:#fff; border-radius:8px; box-shadow:0 6px 18px rgba(0,0,0,0.06); }
+form { display:flex; gap:8px; align-items:center; }
+input[type="text"]{flex:1; padding:8px 10px; border:1px solid #ddd; border-radius:6px}
+button{padding:8px 12px; border:0; background:#333;color:#fff;border-radius:6px}
+.result img{margin-top:12px; border:1px solid #ddd}
+.note{font-size:13px;color:#666}

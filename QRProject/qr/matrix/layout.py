@@ -30,7 +30,7 @@ def create_base_matrix():
         if i < 6:
             matrix[8][i] = None
             matrix[i][8] = None
-        if i < 8:
+        if i < 7:
             matrix[8][14 + i] = None
             matrix[14 + i][8] = None
     

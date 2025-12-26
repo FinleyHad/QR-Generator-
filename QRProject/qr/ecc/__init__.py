@@ -1,3 +1,3 @@
-from .reed_solomon import generate_ecc
+from .reed_solomon import add_ecc
 
-__all__ = ["generate_ecc"]
+__all__ = ["add_ecc"]

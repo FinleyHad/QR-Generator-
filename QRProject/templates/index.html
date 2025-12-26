@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>QRProject - Web UI</title>
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body>
+    <main>
+      <h1>QRProject — Generate QR (Version 1)</h1>
+
+      <form method="get" action="/">
+        <label for="text">Text to encode:</label>
+        <input type="text" id="text" name="text" value="{{ text|e }}" placeholder="Hello world" required>
+        <button type="submit">Generate</button>
+      </form>
+
+      {% if text %}
+      <section class="result">
+        <h2>Result</h2>
+        <img alt="QR code" src="/qr.png?text={{ text|urlencode }}">
+        <p class="note">Right-click the image and save if you want the PNG file.</p>
+      </section>
+      {% endif %}
+
+      <section class="notes">
+        <h3>Notes</h3>
+        <ul>
+          <li>This implements Version 1 QR only (21x21 modules).</li>
+          <li>Masking + format bits are applied using project's functions.</li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>

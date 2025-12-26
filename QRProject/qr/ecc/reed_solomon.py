@@ -1,8 +1,6 @@
-from reedsolo import RSCodec
-
+from reed_solomon import RSCodec
 DATA_CODEWORDS = 19
 ECC_CODEWORDS = 7
-
 
 def add_ecc(data_codewords: list[int]) -> list[int]:
     if len(data_codewords) != DATA_CODEWORDS:

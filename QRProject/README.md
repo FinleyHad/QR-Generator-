@@ -106,4 +106,25 @@ This section demonstrates the QR generation process for the five required string
 
 Each file contains logged steps of encoding, ECC addition, matrix assembly, and masking.
 
+## Web UI (local)
+
+A minimal Flask web UI has been added to generate Version 1 QR codes and preview them in your browser.
+
+Quick start:
+
+1. Install dependencies:
+
+    pip install -r requirements.txt
+
+2. Run the app:
+
+    python webapp.py
+
+3. Open: http://127.0.0.1:5000/ and enter the text to encode.
+
+Notes:
+- The web UI uses the project's encoding, ECC, placement, masking and format-writing functions to produce the final 21x21 matrix and renders it to a PNG.
+- If you see a server error when generating a code, it's likely the Reed–Solomon dependency is missing; install one of the recommended packages from `requirements.txt` (for example `pip install reedsolo`).
+- This is a small demonstration scaffold; extend it as needed for larger QR versions and extra features.
+
 
