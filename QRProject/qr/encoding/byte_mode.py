@@ -1,5 +1,5 @@
 BYTE_MODE_INDICATOR = "0100"
-PAD_BYTES = [0xEC, 0x11]
+PAD_BYTES = [0x11, 0xEC]  # Alternating pad bytes (start with 0x11, not 0xEC)
 DATA_CODEWORDS = 19
 VERSION_1_L_DATA_BITS = DATA_CODEWORDS * 8
 
