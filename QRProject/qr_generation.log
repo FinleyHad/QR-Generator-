@@ -106,3 +106,147 @@
 2025-12-28 18:39:58,223 - qr_generator - INFO - Placed: 21x21, black=204, white=237
 2025-12-28 18:39:58,223 - qr_generator - INFO - Step 5: finalize_matrix(placed, L, mask=0)
 2025-12-28 18:39:58,225 - qr_generator - INFO - Final: 21x21, black=228, white=213
+2025-12-28 20:03:17,880 - qr_generator - INFO - Step 1: encode_string(text)
+2025-12-28 20:03:17,882 - qr_generator - INFO - Step 1: encode_string(text)
+2025-12-28 20:03:17,883 - qr_generator - INFO - Step 1: encode_string(text)
+2025-12-28 20:03:17,884 - qr_generator - INFO - Encoded bits length: 19
+2025-12-28 20:03:17,884 - qr_generator - INFO - Encoded bits length: 19
+2025-12-28 20:03:17,885 - qr_generator - INFO - Step 1: encode_string(text)
+2025-12-28 20:03:17,885 - qr_generator - INFO - Encoded bits length: 19
+2025-12-28 20:03:17,885 - qr_generator - INFO - First 16 bits: [64, 86, 182, 230, 247, 118, 224, 236, 17, 236, 17, 236, 17, 236, 17, 236]
+2025-12-28 20:03:17,885 - qr_generator - INFO - First 16 bits: [64, 231, 236, 42, 19, 35, 83, 101, 242, 213, 246, 20, 18, 108, 59, 16]
+2025-12-28 20:03:17,887 - qr_generator - INFO - Encoded bits length: 19
+2025-12-28 20:03:17,888 - qr_generator - INFO - First 16 bits: [65, 4, 103, 38, 246, 210, 12, 235, 18, 7, 70, 242, 12, 155, 114, 226]
+2025-12-28 20:03:17,888 - qr_generator - INFO - Step 2: add_ecc(bits, 'L')
+2025-12-28 20:03:17,888 - qr_generator - INFO - Step 2: add_ecc(bits, 'L')
+2025-12-28 20:03:17,887 - qr_generator - INFO - First 16 bits: [65, 5, 118, 82, 119, 102, 82, 7, 55, 86, 54, 54, 86, 86, 70, 86]
+2025-12-28 20:03:17,889 - qr_generator - INFO - Step 2: add_ecc(bits, 'L')
+2025-12-28 20:03:17,891 - qr_generator - INFO - ECC codewords count: 26
+2025-12-28 20:03:17,892 - qr_generator - INFO - Step 2: add_ecc(bits, 'L')
+2025-12-28 20:03:17,893 - qr_generator - INFO - ECC codewords count: 26
+2025-12-28 20:03:17,893 - qr_generator - INFO - ECC sample: [64, 86, 182, 230, 247, 118, 224, 236]
+2025-12-28 20:03:17,893 - qr_generator - INFO - ECC codewords count: 26
+2025-12-28 20:03:17,896 - qr_generator - INFO - ECC sample: [64, 231, 236, 42, 19, 35, 83, 101]
+2025-12-28 20:03:17,897 - qr_generator - INFO - ECC codewords count: 26
+2025-12-28 20:03:17,898 - qr_generator - INFO - Step 3: create_base_matrix()
+2025-12-28 20:03:17,899 - qr_generator - INFO - ECC sample: [65, 4, 103, 38, 246, 210, 12, 235]
+2025-12-28 20:03:17,899 - qr_generator - INFO - Step 3: create_base_matrix()
+2025-12-28 20:03:17,899 - qr_generator - INFO - ECC sample: [65, 5, 118, 82, 119, 102, 82, 7]
+2025-12-28 20:03:17,900 - qr_generator - INFO - Base: 21x21, black=-173, white=614
+2025-12-28 20:03:17,900 - qr_generator - INFO - Step 3: create_base_matrix()
+2025-12-28 20:03:17,901 - qr_generator - INFO - Base: 21x21, black=-173, white=614
+2025-12-28 20:03:17,901 - qr_generator - INFO - Step 3: create_base_matrix()
+2025-12-28 20:03:17,901 - qr_generator - INFO - Step 4: place_data(base, bits, ecc)
+2025-12-28 20:03:17,901 - qr_generator - INFO - Base: 21x21, black=-173, white=614
+2025-12-28 20:03:17,901 - qr_generator - INFO - Step 4: place_data(base, bits, ecc)
+2025-12-28 20:03:17,902 - qr_generator - INFO - Base: 21x21, black=-173, white=614
+2025-12-28 20:03:17,904 - qr_generator - INFO - Placed: 21x21, black=204, white=237
+2025-12-28 20:03:17,904 - qr_generator - INFO - Step 4: place_data(base, bits, ecc)
+2025-12-28 20:03:17,905 - qr_generator - INFO - Placed: 21x21, black=200, white=241
+2025-12-28 20:03:17,905 - qr_generator - INFO - Step 4: place_data(base, bits, ecc)
+2025-12-28 20:03:17,905 - qr_generator - INFO - Step 5: finalize_matrix(placed, L, mask=0)
+2025-12-28 20:03:17,906 - qr_generator - INFO - Placed: 21x21, black=204, white=237
+2025-12-28 20:03:17,906 - qr_generator - INFO - Step 5: finalize_matrix(placed, L, mask=0)
+2025-12-28 20:03:17,907 - qr_generator - INFO - Placed: 21x21, black=206, white=235
+2025-12-28 20:03:17,908 - qr_generator - INFO - Final: 21x21, black=228, white=213
+2025-12-28 20:03:17,908 - qr_generator - INFO - Step 5: finalize_matrix(placed, L, mask=0)
+2025-12-28 20:03:17,908 - qr_generator - INFO - Final: 21x21, black=234, white=207
+2025-12-28 20:03:17,910 - qr_generator - INFO - Step 5: finalize_matrix(placed, L, mask=0)
+2025-12-28 20:03:17,912 - qr_generator - INFO - Final: 21x21, black=216, white=225
+2025-12-28 20:03:17,915 - qr_generator - INFO - Final: 21x21, black=226, white=215
+2025-12-28 20:03:23,971 - qr_generator - INFO - Step 1: encode_string(text)
+2025-12-28 20:03:23,972 - qr_generator - INFO - Encoded bits length: 19
+2025-12-28 20:03:23,975 - qr_generator - INFO - Step 1: encode_string(text)
+2025-12-28 20:03:23,975 - qr_generator - INFO - First 16 bits: [64, 86, 182, 230, 247, 118, 224, 236, 17, 236, 17, 236, 17, 236, 17, 236]
+2025-12-28 20:03:23,978 - qr_generator - INFO - Step 2: add_ecc(bits, 'L')
+2025-12-28 20:03:23,978 - qr_generator - INFO - Encoded bits length: 19
+2025-12-28 20:03:23,977 - qr_generator - INFO - Step 1: encode_string(text)
+2025-12-28 20:03:23,982 - qr_generator - INFO - Step 1: encode_string(text)
+2025-12-28 20:03:23,984 - qr_generator - INFO - First 16 bits: [65, 5, 118, 82, 119, 102, 82, 7, 55, 86, 54, 54, 86, 86, 70, 86]
+2025-12-28 20:03:23,984 - qr_generator - INFO - Encoded bits length: 19
+2025-12-28 20:03:23,984 - qr_generator - INFO - ECC codewords count: 26
+2025-12-28 20:03:23,985 - qr_generator - INFO - Encoded bits length: 19
+2025-12-28 20:03:23,986 - qr_generator - INFO - Step 2: add_ecc(bits, 'L')
+2025-12-28 20:03:23,986 - qr_generator - INFO - First 16 bits: [64, 231, 236, 42, 19, 35, 83, 101, 242, 213, 246, 20, 18, 108, 59, 16]
+2025-12-28 20:03:23,988 - qr_generator - INFO - ECC sample: [64, 86, 182, 230, 247, 118, 224, 236]
+2025-12-28 20:03:23,989 - qr_generator - INFO - First 16 bits: [65, 4, 103, 38, 246, 210, 12, 235, 18, 7, 70, 242, 12, 155, 114, 226]
+2025-12-28 20:03:23,990 - qr_generator - INFO - Step 2: add_ecc(bits, 'L')
+2025-12-28 20:03:23,990 - qr_generator - INFO - Step 3: create_base_matrix()
+2025-12-28 20:03:23,992 - qr_generator - INFO - ECC codewords count: 26
+2025-12-28 20:03:23,993 - qr_generator - INFO - Step 2: add_ecc(bits, 'L')
+2025-12-28 20:03:23,996 - qr_generator - INFO - Base: 21x21, black=-173, white=614
+2025-12-28 20:03:23,997 - qr_generator - INFO - ECC codewords count: 26
+2025-12-28 20:03:23,998 - qr_generator - INFO - ECC sample: [65, 5, 118, 82, 119, 102, 82, 7]
+2025-12-28 20:03:24,000 - qr_generator - INFO - Step 4: place_data(base, bits, ecc)
+2025-12-28 20:03:24,001 - qr_generator - INFO - ECC codewords count: 26
+2025-12-28 20:03:24,002 - qr_generator - INFO - ECC sample: [64, 231, 236, 42, 19, 35, 83, 101]
+2025-12-28 20:03:24,002 - qr_generator - INFO - Step 3: create_base_matrix()
+2025-12-28 20:03:24,004 - qr_generator - INFO - Placed: 21x21, black=204, white=237
+2025-12-28 20:03:24,005 - qr_generator - INFO - ECC sample: [65, 4, 103, 38, 246, 210, 12, 235]
+2025-12-28 20:03:24,005 - qr_generator - INFO - Step 3: create_base_matrix()
+2025-12-28 20:03:24,006 - qr_generator - INFO - Base: 21x21, black=-173, white=614
+2025-12-28 20:03:24,007 - qr_generator - INFO - Step 5: finalize_matrix(placed, L, mask=0)
+2025-12-28 20:03:24,007 - qr_generator - INFO - Step 3: create_base_matrix()
+2025-12-28 20:03:24,008 - qr_generator - INFO - Base: 21x21, black=-173, white=614
+2025-12-28 20:03:24,009 - qr_generator - INFO - Step 4: place_data(base, bits, ecc)
+2025-12-28 20:03:24,012 - qr_generator - INFO - Final: 21x21, black=228, white=213
+2025-12-28 20:03:24,013 - qr_generator - INFO - Base: 21x21, black=-173, white=614
+2025-12-28 20:03:24,014 - qr_generator - INFO - Step 4: place_data(base, bits, ecc)
+2025-12-28 20:03:24,015 - qr_generator - INFO - Placed: 21x21, black=206, white=235
+2025-12-28 20:03:24,017 - qr_generator - INFO - Step 4: place_data(base, bits, ecc)
+2025-12-28 20:03:24,019 - qr_generator - INFO - Placed: 21x21, black=200, white=241
+2025-12-28 20:03:24,019 - qr_generator - INFO - Step 5: finalize_matrix(placed, L, mask=0)
+2025-12-28 20:03:24,021 - qr_generator - INFO - Placed: 21x21, black=204, white=237
+2025-12-28 20:03:24,021 - qr_generator - INFO - Step 5: finalize_matrix(placed, L, mask=0)
+2025-12-28 20:03:24,022 - qr_generator - INFO - Final: 21x21, black=226, white=215
+2025-12-28 20:03:24,023 - qr_generator - INFO - Step 5: finalize_matrix(placed, L, mask=0)
+2025-12-28 20:03:24,025 - qr_generator - INFO - Final: 21x21, black=234, white=207
+2025-12-28 20:03:24,029 - qr_generator - INFO - Final: 21x21, black=216, white=225
+2025-12-28 20:05:45,131 - qr_generator - INFO - Step 1: encode_string(text)
+2025-12-28 20:05:45,134 - qr_generator - INFO - Step 1: encode_string(text)
+2025-12-28 20:05:45,134 - qr_generator - INFO - Encoded bits length: 19
+2025-12-28 20:05:45,135 - qr_generator - INFO - Encoded bits length: 19
+2025-12-28 20:05:45,137 - qr_generator - INFO - First 16 bits: [64, 86, 182, 230, 247, 118, 224, 236, 17, 236, 17, 236, 17, 236, 17, 236]
+2025-12-28 20:05:45,139 - qr_generator - INFO - Step 1: encode_string(text)
+2025-12-28 20:05:45,140 - qr_generator - INFO - First 16 bits: [65, 5, 118, 82, 119, 102, 82, 7, 55, 86, 54, 54, 86, 86, 70, 86]
+2025-12-28 20:05:45,143 - qr_generator - INFO - Step 1: encode_string(text)
+2025-12-28 20:05:45,144 - qr_generator - INFO - Step 2: add_ecc(bits, 'L')
+2025-12-28 20:05:45,145 - qr_generator - INFO - Encoded bits length: 19
+2025-12-28 20:05:45,146 - qr_generator - INFO - Step 2: add_ecc(bits, 'L')
+2025-12-28 20:05:45,146 - qr_generator - INFO - Encoded bits length: 19
+2025-12-28 20:05:45,152 - qr_generator - INFO - First 16 bits: [64, 231, 236, 42, 19, 35, 83, 101, 242, 213, 246, 20, 18, 108, 59, 16]
+2025-12-28 20:05:45,153 - qr_generator - INFO - ECC codewords count: 26
+2025-12-28 20:05:45,157 - qr_generator - INFO - First 16 bits: [65, 4, 103, 38, 246, 210, 12, 235, 18, 7, 70, 242, 12, 155, 114, 226]
+2025-12-28 20:05:45,159 - qr_generator - INFO - ECC codewords count: 26
+2025-12-28 20:05:45,160 - qr_generator - INFO - Step 2: add_ecc(bits, 'L')
+2025-12-28 20:05:45,160 - qr_generator - INFO - ECC sample: [64, 86, 182, 230, 247, 118, 224, 236]
+2025-12-28 20:05:45,160 - qr_generator - INFO - Step 2: add_ecc(bits, 'L')
+2025-12-28 20:05:45,162 - qr_generator - INFO - ECC sample: [65, 5, 118, 82, 119, 102, 82, 7]
+2025-12-28 20:05:45,169 - qr_generator - INFO - Step 3: create_base_matrix()
+2025-12-28 20:05:45,172 - qr_generator - INFO - ECC codewords count: 26
+2025-12-28 20:05:45,173 - qr_generator - INFO - Step 3: create_base_matrix()
+2025-12-28 20:05:45,174 - qr_generator - INFO - ECC codewords count: 26
+2025-12-28 20:05:45,175 - qr_generator - INFO - Base: 21x21, black=-173, white=614
+2025-12-28 20:05:45,176 - qr_generator - INFO - ECC sample: [64, 231, 236, 42, 19, 35, 83, 101]
+2025-12-28 20:05:45,177 - qr_generator - INFO - Base: 21x21, black=-173, white=614
+2025-12-28 20:05:45,177 - qr_generator - INFO - ECC sample: [65, 4, 103, 38, 246, 210, 12, 235]
+2025-12-28 20:05:45,177 - qr_generator - INFO - Step 4: place_data(base, bits, ecc)
+2025-12-28 20:05:45,179 - qr_generator - INFO - Step 3: create_base_matrix()
+2025-12-28 20:05:45,180 - qr_generator - INFO - Step 4: place_data(base, bits, ecc)
+2025-12-28 20:05:45,181 - qr_generator - INFO - Step 3: create_base_matrix()
+2025-12-28 20:05:45,183 - qr_generator - INFO - Placed: 21x21, black=204, white=237
+2025-12-28 20:05:45,185 - qr_generator - INFO - Base: 21x21, black=-173, white=614
+2025-12-28 20:05:45,187 - qr_generator - INFO - Placed: 21x21, black=206, white=235
+2025-12-28 20:05:45,188 - qr_generator - INFO - Base: 21x21, black=-173, white=614
+2025-12-28 20:05:45,189 - qr_generator - INFO - Step 5: finalize_matrix(placed, L, mask=0)
+2025-12-28 20:05:45,189 - qr_generator - INFO - Step 4: place_data(base, bits, ecc)
+2025-12-28 20:05:45,190 - qr_generator - INFO - Step 5: finalize_matrix(placed, L, mask=0)
+2025-12-28 20:05:45,191 - qr_generator - INFO - Step 4: place_data(base, bits, ecc)
+2025-12-28 20:05:45,193 - qr_generator - INFO - Final: 21x21, black=228, white=213
+2025-12-28 20:05:45,195 - qr_generator - INFO - Placed: 21x21, black=200, white=241
+2025-12-28 20:05:45,197 - qr_generator - INFO - Final: 21x21, black=226, white=215
+2025-12-28 20:05:45,201 - qr_generator - INFO - Placed: 21x21, black=204, white=237
+2025-12-28 20:05:45,204 - qr_generator - INFO - Step 5: finalize_matrix(placed, L, mask=0)
+2025-12-28 20:05:45,206 - qr_generator - INFO - Step 5: finalize_matrix(placed, L, mask=0)
+2025-12-28 20:05:45,209 - qr_generator - INFO - Final: 21x21, black=234, white=207
+2025-12-28 20:05:45,212 - qr_generator - INFO - Final: 21x21, black=216, white=225

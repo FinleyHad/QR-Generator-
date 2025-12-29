@@ -2,13 +2,11 @@
 
 ## � YOUR FILES TO IMPLEMENT
 
-**Edit these skeleton files:**
+**Edit this skeleton file:**
 1. `qr/matrix/NADIR_layout.py` - Matrix structure and data placement
-2. `qr/matrix/NADIR_matrix.py` - Matrix utilities and validation
 
 **Reference files (read-only):**
 - `qr/matrix/layout.py` - Working matrix creation and data placement
-- `qr/matrix/placement.py` - Data placement algorithm details
 
 ---
 
@@ -104,7 +102,7 @@ Also see `qr/matrix/placement.py` for zig-zag pattern implementation.
 
 ## **When You're Done**
 
-✅ All 55 tests pass
+✅ All tests pass
 ✅ **Notify Person 4** that matrix is ready
 
 **Next:** Person 4 will apply masking to your matrix.
