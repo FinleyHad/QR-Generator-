@@ -1,0 +1,15 @@
+name: pp_assignment_two
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11.7
+  - numpy>=1.26
+  - pillow>=9.5
+  - flask>=2.2
+  - pip
+  - pip:
+      - reedsolo>=1.5
+      - qrcode>=7.3
+      - opencv-python>=4.8
+      - pyzbar>=0.1.9

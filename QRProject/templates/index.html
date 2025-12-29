@@ -3,34 +3,90 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>QRProject - Web UI</title>
+    <title>QRProject - QR Code Generator</title>
     <link rel="stylesheet" href="/static/style.css">
   </head>
   <body>
     <main>
-      <h1>QRProject — Generate QR (Version 1)</h1>
+      <h1>QR Code Generator (Version 1)</h1>
+      
+      <div class="controls">
+        <button id="generateBtn" class="btn-primary">Generate All 5 Test Strings</button>
+        <p class="subtitle">Click above to generate QR codes for all 5 required test strings</p>
+      </div>
 
-      <form method="get" action="/">
-        <label for="text">Text to encode:</label>
-        <input type="text" id="text" name="text" value="{{ text|e }}" placeholder="Hello world" required>
-        <button type="submit">Generate</button>
-      </form>
-
-      {% if text %}
-      <section class="result">
-        <h2>Result</h2>
-        <img alt="QR code" src="/qr.png?text={{ text|urlencode }}">
-        <p class="note">Right-click the image and save if you want the PNG file.</p>
-      </section>
-      {% endif %}
+      <div id="results" class="results-container"></div>
 
       <section class="notes">
-        <h3>Notes</h3>
+        <h3>About This Tool</h3>
         <ul>
-          <li>This implements Version 1 QR only (21x21 modules).</li>
-          <li>Masking + format bits are applied using project's functions.</li>
+          <li>Generates QR codes for Version 1 (21×21 modules)</li>
+          <li>Uses Byte Mode encoding with Reed-Solomon error correction (Level L)</li>
+          <li>Applies mask pattern 0 with full timing patterns</li>
+          <li>Tests structural validity with 152 unit tests</li>
         </ul>
       </section>
     </main>
+
+    <script>
+      document.getElementById('generateBtn').addEventListener('click', async function() {
+        const resultsDiv = document.getElementById('results');
+        resultsDiv.innerHTML = '<p class="loading">Generating QR codes...</p>';
+
+        try {
+          const response = await fetch('/generate-all?mode=text');
+          const results = await response.json();
+
+          let html = '';
+          results.forEach((result, index) => {
+            html += `
+              <div class="qr-result">
+                <div class="qr-header">
+                  <h2>${result.label}</h2>
+                  <p class="qr-text"><strong>Text:</strong> <code>${escapeHtml(result.text)}</code></p>
+                  <p class="qr-length"><strong>Size:</strong> ${new TextEncoder().encode(result.text).length} bytes</p>
+                </div>
+                
+                <div class="qr-content">
+                  ${result.error 
+                    ? `<div class="error-box">
+                        <p class="error-icon">❌</p>
+                        <p class="error-text">${escapeHtml(result.error)}</p>
+                      </div>`
+                    : `<div class="qr-info">
+                        <p class="display-url"><strong>QR Encodes:</strong> <code>${escapeHtml(result.encoded)}</code></p>
+
+                      </div>
+                      <div class="qr-display">
+                        <img src="${result.png_url}" alt="QR Code" class="qr-image">
+                        <p class="qr-note">↑ Scan with your phone camera ↑</p>
+                      </div>`
+                  }
+                </div>
+              </div>
+            `;
+          });
+
+          resultsDiv.innerHTML = html;
+          
+          const firstResult = resultsDiv.querySelector('.qr-result');
+          if (firstResult) {
+            firstResult.scrollIntoView({ behavior: 'smooth' });
+          }
+        } catch (error) {
+          resultsDiv.innerHTML = `<div class="error-box"><p>Failed to generate QR codes: ${escapeHtml(error.message)}</p></div>`;
+        }
+      });
+
+      function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+      }
+
+      window.addEventListener('load', function() {
+        document.getElementById('generateBtn').click();
+      });
+    </script>
   </body>
 </html>

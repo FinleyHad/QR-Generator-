@@ -3,7 +3,7 @@ from qr.utils.logging_config import setup_logger
 from qr.encoding.encode import encode_string
 from qr.ecc.reed_solomon import add_ecc
 from qr.matrix.layout import create_base_matrix, place_data
-from qr.masking.mask0 import apply_mask
+from qr.masking.finalize import finalize_matrix
 
 logger = setup_logger()
 
@@ -23,7 +23,7 @@ def generate_qr_matrix(text, ecc_level="L", mask_pattern=0):
     matrix_with_data = place_data(matrix, encoded_bits, ecc_codewords)
     logger.debug("Data placed in matrix")
 
-    # Step 4: Apply mask
-    masked_matrix = apply_mask(matrix_with_data, mask_pattern)
+    # Step 4: Mask + format info
+    final_matrix = finalize_matrix(matrix_with_data, ecc_level, mask_pattern)
     logger.info("QR matrix generation complete")
-    return masked_matrix
+    return final_matrix

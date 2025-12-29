@@ -27,9 +27,15 @@ def create_base_matrix():
     place_finder_pattern(0, 14)
     place_finder_pattern(14, 0)
 
-    for i in range(8, 13):
-        matrix[6, i] = 1 if (i - 8) % 2 == 0 else 0
-        matrix[i, 6] = 1 if (i - 8) % 2 == 0 else 0
+    # Timing patterns: alternating 1-0-1-0... on row 6 and column 6
+    # Run across the ENTIRE row/column except separators (which are -1)
+    for i in range(21):
+        # Row 6: timing pattern alternating by column index
+        if matrix[6, i] == -1:  # Only if not already set as separator
+            matrix[6, i] = 1 if i % 2 == 0 else 0
+        # Column 6: timing pattern alternating by row index
+        if matrix[i, 6] == -1:  # Only if not already set as separator
+            matrix[i, 6] = 1 if i % 2 == 0 else 0
 
     # Dark module (always 1)
     matrix[13, 8] = 1
@@ -51,6 +57,10 @@ def place_data(matrix, encoded_bits, ecc_codewords):
     Accepts either:
     - encoded_bits: string of '0'/'1' bits OR list of data codewords (ints)
     - ecc_codewords: string/list similar to above (usually list of ints)
+
+    Note: our ``add_ecc`` helper returns *data + ecc* for API compatibility.
+    If the ECC list is longer than the data list, we treat the trailing
+    portion as ECC only to avoid double-placing data bits.
     """
     size = 21
 
@@ -60,11 +70,16 @@ def place_data(matrix, encoded_bits, ecc_codewords):
     else:
         encoded_bits_str = ''.join(str(b) for b in encoded_bits)
 
-    # Normalize ecc_codewords to bitstring
-    if isinstance(ecc_codewords, (list, tuple)):
-        ecc_bits_str = ''.join(format(c, '08b') if isinstance(c, int) else str(c) for c in ecc_codewords)
+    # Normalize ecc_codewords to bitstring (slice off data prefix if present)
+    ecc_input = ecc_codewords
+    if isinstance(ecc_codewords, (list, tuple)) and len(ecc_codewords) > len(encoded_bits):
+        # add_ecc returned data+ecc; keep only the ECC tail
+        ecc_input = ecc_codewords[len(encoded_bits):]
+
+    if isinstance(ecc_input, (list, tuple)):
+        ecc_bits_str = ''.join(format(c, '08b') if isinstance(c, int) else str(c) for c in ecc_input)
     else:
-        ecc_bits_str = ''.join(str(b) for b in ecc_codewords)
+        ecc_bits_str = ''.join(str(b) for b in ecc_input)
 
     all_bits = encoded_bits_str + ecc_bits_str
 
@@ -80,6 +95,15 @@ def place_data(matrix, encoded_bits, ecc_codewords):
         if row == 6 or col == 6:  # Timing patterns (entire row 6 and col 6)
             return True
         if row == 13 and col == 8:  # Dark module
+            return True
+        # Format information cells (must not be overwritten with data)
+        if row == 8 and col <= 8:  # Primary format area: row 8, cols 0-8
+            return True
+        if row == 8 and col >= 13:  # Secondary format area: row 8, cols 13-20
+            return True
+        if col == 8 and row <= 8:  # Primary format area: col 8, rows 0-8
+            return True
+        if col == 8 and row >= 13:  # Secondary format area: col 8, rows 13-20
             return True
         return False
 

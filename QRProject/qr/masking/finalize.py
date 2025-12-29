@@ -16,7 +16,7 @@ logger = logging.getLogger(__name__)
 SIZE_V1 = 21
 
 
-def finalize_matrix(base_matrix: np.ndarray) -> np.ndarray:
+def finalize_matrix(base_matrix: np.ndarray, ecc_level: str = "L", mask_id: int = 0) -> np.ndarray:
     """
     Finalize a Version 1 QR matrix:
     - Apply mask pattern 0 to DATA/ECC cells only
@@ -31,12 +31,13 @@ def finalize_matrix(base_matrix: np.ndarray) -> np.ndarray:
     reserved = build_reserved_map_v1()
     logger.info("Reserved map built (function + format cells protected).")
 
-    # 1) Mask (pattern 0) on data cells only
+    # 1) Mask (pattern 0) on data cells only (mask_id currently fixed to 0)
+    # Future: support mask_id 1..7 when mask implementations are available
     flipped = apply_mask0(m, reserved)
     logger.info("Mask 0 applied. Flipped %d modules.", flipped)
 
-    # 2) Format bits for ECC L + mask 0
-    bits = compute_format_bits("L", 0)
+    # 2) Format bits for selected ECC level + mask id
+    bits = compute_format_bits(ecc_level, mask_id)
     logger.info("Format bits (15): %s", "".join(str(b) for b in bits))
 
     # 3) Write format bits (both copies)
@@ -61,12 +62,33 @@ def build_reserved_map_v1() -> np.ndarray:
     def mark(r: int, c: int) -> None:
         reserved[r, c] = True
 
-    # Finder + separators: 9x9 areas at TL, TR, BL
-    for r in range(9):
-        for c in range(9):
-            mark(r, c)  # top-left
-            mark(r, SIZE_V1 - 1 - c)  # top-right
-            mark(SIZE_V1 - 1 - r, c)  # bottom-left
+    # Finder patterns (7x7) + 1-cell separators on right/bottom edges (spec)
+    # Top-left
+    for r in range(7):
+        for c in range(7):
+            mark(r, c)
+    for c in range(8):
+        mark(7, c)  # bottom separator row
+    for r in range(8):
+        mark(r, 7)  # right separator column
+
+    # Top-right
+    for r in range(7):
+        for c in range(14, 21):
+            mark(r, c)
+    for c in range(13, 21):
+        mark(7, c)  # bottom separator row
+    for r in range(8):
+        mark(r, 13)  # left separator column
+
+    # Bottom-left
+    for r in range(14, 21):
+        for c in range(7):
+            mark(r, c)
+    for c in range(8):
+        mark(13, c)  # top separator row
+    for r in range(13, 21):
+        mark(r, 7)  # right separator column
 
     # Timing patterns (entire row 6 and col 6)
     for i in range(SIZE_V1):
