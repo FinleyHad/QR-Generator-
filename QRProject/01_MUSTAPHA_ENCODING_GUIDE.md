@@ -2,8 +2,9 @@
 
 ## � YOUR FILES TO IMPLEMENT
 
-**Edit this skeleton file:**
+**Edit these skeleton files:**
 1. `qr/encoding/MUSTAPHA_byte_mode.py` - Main byte mode encoding function
+2. `qr/encoding/MUSTAPHA_encode.py` - Wrapper function for encoding
 
 **Reference files (read-only):**
 - `qr/encoding/byte_mode.py` - Working implementation to learn from

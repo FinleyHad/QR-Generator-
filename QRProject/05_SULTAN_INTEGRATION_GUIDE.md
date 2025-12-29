@@ -3,12 +3,13 @@
 ## � YOUR FILES TO IMPLEMENT
 
 **Edit these skeleton files:**
-1. `SULTAN_integration.py` - Main integration and PNG rendering functions
+1. `SULTAN_integration.py` - Main QR code generation pipeline orchestration
+2. `SULTAN_render.py` - PNG rendering functions (matrix to image conversion)
 
 **Update imports in these files (after implementing above):**
-2. `scripts/webapp.py` - Change imports to use SULTAN_integration
-3. `scripts/run_demos.py` - Change imports to use SULTAN_integration  
-4. `scripts/save_qr_images.py` - Change imports to use SULTAN_integration
+3. `scripts/webapp.py` - Change imports to use SULTAN_integration and SULTAN_render
+4. `scripts/run_demos.py` - Change imports to use SULTAN_integration
+5. `scripts/save_qr_images.py` - Change imports to use SULTAN_render
 
 **Reference files (read-only):**
 - `qr/generate.py` - Working pipeline orchestration
@@ -250,9 +251,9 @@ curl http://localhost:5000/generate-all
 ---
 
 ## Success Criteria
-✅ All 15 integration tests pass  
-✅ All 20+ quality tests pass  
-✅ All 5 web app tests pass  
+✅ All integration tests pass  
+✅ All quality tests pass  
+✅ All web app tests pass  
 ✅ QR codes are scannable by standard readers  
 ✅ Web app loads and generates codes correctly  
 ✅ No import errors or missing dependencies  
