@@ -31,9 +31,9 @@ Before masking:          After masking:
 
 ## **What You Implement**
 
-Two main functions:
+**You have 3 main functions to implement:**
 
-### **1. apply_mask0(matrix, reserved) → int**
+### **Function 1: apply_mask0(matrix, reserved) in FINLEY_mask0.py**
 
 Apply checkerboard mask pattern 0 to all non-reserved cells.
 
@@ -44,9 +44,25 @@ Mask pattern 0: Flip a cell if `(row + col) % 2 == 0`
 # If (row + col) is odd, keep the bit
 ```
 
-### **2. finalize_matrix(placed_matrix, ecc_level, mask_id) → np.ndarray**
+Returns: Penalty score (int)
 
-Takes the masked matrix and adds format information bits, returns final QR code.
+---
+
+### **Function 2: finalize_matrix(matrix, ecc_level, mask_id) in FINLEY_finalize.py**
+
+Complete pipeline: apply mask → compute format bits → write format info.
+
+Returns: Final 21×21 QR code ready for rendering
+
+---
+
+### **Function 3: compute_format_bits(ecc_level, mask_id) in FINLEY_format_info.py**
+
+Compute 15-bit format information code with BCH error correction.
+
+Returns: List of 15 bits [0 or 1]
+
+**Note:** There are additional helper functions in these files, but these are the 3 main functions you need to focus on.
 
 ---
 

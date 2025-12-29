@@ -34,26 +34,35 @@
 
 ## **What You Implement**
 
-### File 1: MUSTAPHA_byte_mode.py
+**You have 2 main functions to implement:**
 
-You need to fill in these functions:
+### **Function 1: byte_mode(data, debug) in MUSTAPHA_byte_mode.py**
 
-### **1. byte_mode(text: str) → bytes**
-First function - convert text to bytes using ISO-8859-1 encoding.
+Convert text to QR byte mode format with padding.
 
 **Input:** String (e.g., "A", "hello", "test123")
-**Output:** Python bytes object
+**Output:** Tuple of (codewords list[int], bitstream str)
+  - codewords: Exactly 19 bytes (0-255)
+  - bitstream: String of '0' and '1' characters
 
-**Why bytes?** QR codes work with byte values (0-255), not characters.
+**QR Structure:**
+- 4 bits: Mode indicator (0100 for byte mode)
+- 8 bits: Character count
+- 8 bits per character: Actual data
+- Terminator bits + padding bytes to fill 19 codewords
 
 **Example:**
 ```python
-byte_mode("A")  # Returns b'A'
-byte_mode("Hello")  # Returns b'Hello'
+codewords, bits = byte_mode("A")
+# codewords: [64, 16, 160, 236, 17, ...] (19 total)
+# bits: '0100000000010100000...' (152 bits)
 ```
 
-### **2. encode_string(text: str) → list[int]**
-Second function - convert bytes to bit list with QR code structure.
+---
+
+### **Function 2: encode_string(text) in MUSTAPHA_encode.py**
+
+Wrapper function that calls byte_mode() and returns just the codewords.
 
 **Input:** String
 **Output:** List of bits [0, 1, 0, 1, ...]
