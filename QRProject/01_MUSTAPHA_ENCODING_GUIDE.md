@@ -2,9 +2,8 @@
 
 ## � YOUR FILES TO IMPLEMENT
 
-**Edit these skeleton files:**
+**Edit this skeleton file:**
 1. `qr/encoding/MUSTAPHA_byte_mode.py` - Main byte mode encoding function
-2. `qr/encoding/MUSTAPHA_encoding.py` - Wrapper encoding functions
 
 **Reference files (read-only):**
 - `qr/encoding/byte_mode.py` - Working implementation to learn from
@@ -268,7 +267,7 @@ return result
 
 ## **When You're Done**
 
-✅ All 21 tests in `test_01_encoding.py` pass  
+✅ All tests in `test_01_encoding.py` pass  
 ✅ You can run: `python -c "from PERSON1_encoding import byte_mode; print(byte_mode('A'))"`  
 ✅ **Notify Person 2** that encoding is ready  
 

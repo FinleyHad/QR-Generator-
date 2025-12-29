@@ -2,9 +2,8 @@
 
 ## � YOUR FILES TO IMPLEMENT
 
-**Edit these skeleton files:**
+**Edit this skeleton file:**
 1. `qr/ecc/MUSA_reed_solomon.py` - Reed-Solomon error correction function
-2. `qr/ecc/MUSA_ecc.py` - ECC wrapper and utilities
 
 **Reference files (read-only):**
 - `qr/ecc/reed_solomon.py` - Working implementation to learn from
@@ -257,7 +256,7 @@ encoded, ecc = codec.encode(bytes(data_bytes))
 
 ## **When You're Done**
 
-✅ All 11 tests in `test_02_ecc.py` pass  
+✅ All tests in `test_02_ecc.py` pass  
 ✅ You can run: `python -c "from PERSON2_ecc import add_ecc; print(len(add_ecc([...], 'L')))"`  
 ✅ **Notify Person 3** that ECC is ready  
 

@@ -2,9 +2,8 @@
 
 ## � YOUR FILES TO IMPLEMENT
 
-**Edit these skeleton files:**
+**Edit this skeleton file:**
 1. `qr/masking/FINLEY_mask0.py` - Mask pattern 0 and finalization
-2. `qr/masking/FINLEY_masking.py` - Masking utilities and format info
 
 **Reference files (read-only):**
 - `qr/masking/mask0.py` - Working mask pattern implementation
@@ -71,7 +70,7 @@ Look at `qr/masking/` for working examples:
 
 ## **When You're Done**
 
-✅ All 45 tests pass
+✅ All tests pass
 ✅ **Notify Person 5** that masking is ready
 
 **Next:** Person 5 will integrate everything and create the web interface.
