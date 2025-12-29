@@ -4,7 +4,8 @@
 
 **Edit these skeleton files:**
 1. `qr/masking/FINLEY_mask0.py` - Apply mask pattern 0 (checkerboard)
-2. `qr/masking/FINLEY_finalize.py` - Finalize matrix and write format info3. `qr/masking/FINLEY_format_info.py` - Calculate and write format information bits
+2. `qr/masking/FINLEY_finalize.py` - Finalize matrix and write format info
+3. `qr/masking/FINLEY_format_info.py` - Calculate and write format information bits
 **Reference files (read-only):**
 - `qr/masking/mask0.py` - Working mask pattern implementation
 - `qr/masking/finalize.py` - Working finalization function

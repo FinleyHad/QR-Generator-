@@ -24,17 +24,19 @@
 
 ---
 
-## 📁 **YOUR FILE TO EDIT**
+## 📁 **YOUR FILES TO EDIT**
 
-**Location:** `qr/encoding/MUSTAPHA_encoding.py`
-
-This is your skeleton file with TODOs. Fill in the functions here.
+**Files to implement:**
+1. `qr/encoding/MUSTAPHA_byte_mode.py` - Main byte mode encoding logic
+2. `qr/encoding/MUSTAPHA_encode.py` - Simple wrapper function
 
 ---
 
 ## **What You Implement**
 
-You need to fill in these 3 functions in `qr/encoding/MUSTAPHA_encoding.py`:
+### File 1: MUSTAPHA_byte_mode.py
+
+You need to fill in these functions:
 
 ### **1. byte_mode(text: str) → bytes**
 First function - convert text to bytes using ISO-8859-1 encoding.
