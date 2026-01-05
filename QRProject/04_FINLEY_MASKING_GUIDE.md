@@ -18,14 +18,31 @@
 
 **Your Job:** Apply checkerboard mask pattern and write format information bits.
 
-**Example:**
+**Example - Why masking is needed:**
 ```
-Before masking:          After masking:
-1 0 1 0                  0 1 0 1  (flipped based on checkerboard)
-0 1 0 1                  1 0 1 0
-1 0 1 0                  0 1 0 1
-0 1 0 1                  1 0 1 0
+PROBLEM: Large blocks of same color are hard for cameras to scan
+Before masking:          After masking (pattern 0):
+1 1 1 1                  0 1 0 1  ← XOR flips ONLY positions where (row+col) is even
+1 1 1 1                  1 0 1 0  ← Creates checkerboard pattern
+0 0 0 0                  1 0 1 0  ← Better contrast and edges!
+0 0 0 0                  0 1 0 1  ← Breaks up large same-color blocks
+
+Detailed flip logic (showing first 2 rows):
+Row 0: Position (0,0): (0+0)%2=0 → FLIP: 1⊕1=0  Position (0,1): (0+1)%2=1 → KEEP: 1⊕0=1
+       Position (0,2): (0+2)%2=0 → FLIP: 1⊕1=0  Position (0,3): (0+3)%2=1 → KEEP: 1⊕0=1
+       Result: 0 1 0 1
+
+Row 1: Position (1,0): (1+0)%2=1 → KEEP: 1⊕0=1  Position (1,1): (1+1)%2=0 → FLIP: 1⊕1=0
+       Position (1,2): (1+2)%2=1 → KEEP: 1⊕0=1  Position (1,3): (1+3)%2=0 → FLIP: 1⊕1=0
+       Result: 1 0 1 0
+
+The mask itself is: 1 0 1 0  ← This checkerboard gets XORed with your data
+                    0 1 0 1
+                    1 0 1 0
+                    0 1 0 1
 ```
+
+**Why this helps:** Cameras and scanners struggle with large areas of solid black or white. The checkerboard XOR pattern creates edges and contrast everywhere, making it easier to detect and read the QR code under different lighting conditions.
 
 ---
 

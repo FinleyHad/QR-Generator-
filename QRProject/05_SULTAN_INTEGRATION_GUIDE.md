@@ -3,13 +3,12 @@
 ## � YOUR FILES TO IMPLEMENT
 
 **Edit these skeleton files:**
-1. `SULTAN_integration.py` - Main QR code generation pipeline orchestration
-2. `SULTAN_render.py` - PNG rendering functions (matrix to image conversion)
+1. `SULTAN_integration.py` - Main integration and PNG rendering functions
 
 **Update imports in these files (after implementing above):**
-3. `scripts/webapp.py` - Change imports to use SULTAN_integration and SULTAN_render
-4. `scripts/run_demos.py` - Change imports to use SULTAN_integration
-5. `scripts/save_qr_images.py` - Change imports to use SULTAN_render
+2. `scripts/webapp.py` - Change imports to use SULTAN_integration
+3. `scripts/run_demos.py` - Change imports to use SULTAN_integration  
+4. `scripts/save_qr_images.py` - Change imports to use SULTAN_integration
 
 **Reference files (read-only):**
 - `qr/generate.py` - Working pipeline orchestration
