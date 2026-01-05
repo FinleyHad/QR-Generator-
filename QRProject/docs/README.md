@@ -1,6 +1,79 @@
-# PP_assignment_Two
+# QR Code Generator - Programming in Python Assignment Two
 
+A Version 1 QR code generator implementation that encodes text strings into scannable 21×21 QR codes using byte mode encoding, Reed-Solomon error correction, and masking patterns.
 
+## Project Structure
+
+```
+QRProject/
+├── qr/                      # Core QR code generation modules
+│   ├── encoding/            # Data encoding (byte mode)
+│   ├── ecc/                 # Reed-Solomon error correction
+│   ├── matrix/              # Matrix structure and data placement
+│   └── masking/             # Mask patterns and format information
+├── scripts/                 # Utility scripts
+│   └── webapp.py           # Flask web interface
+├── tests/                   # Test suite
+├── demos/                   # Demo output files
+└── docs/                    # Documentation
+
+```
+
+## Quick Start
+
+### Prerequisites
+
+- Python 3.8+
+- pip package manager
+- Virtual environment (recommended)
+
+### Installation
+
+1. **Clone or navigate to the project directory:**
+   ```bash
+   cd pp_assignment_two
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+### Running the Web Application
+
+1. **Set the Python path and start the Flask server:**
+   ```bash
+   # From the pp_assignment_two directory
+   cd pp_assignment_two
+   set PYTHONPATH=QRProject  # Windows CMD
+   # OR
+   $env:PYTHONPATH="QRProject"  # Windows PowerShell
+   # OR
+   export PYTHONPATH=QRProject  # Linux/Mac
+
+   python QRProject/scripts/webapp.py
+   ```
+
+2. **Open your browser and navigate to:**
+   ```
+   http://127.0.0.1:5000
+   ```
+
+3. **Enter text and generate QR codes** - The webapp will display the generated QR code as an image that you can scan with your phone.
+
+### Running Tests
+
+Run the complete test suite:
+```bash
+cd QRProject
+pytest tests/ -q
+```
+
+Run specific test files:
+```bash
+pytest tests/test_05_masking.py -v
+pytest tests/test_06_integration.py -v
+```
 
 ## Getting started
 
