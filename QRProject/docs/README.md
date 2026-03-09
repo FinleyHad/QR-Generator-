@@ -1,7 +1,5 @@
 # QR Code Generator with Error Correction
-Course project for Programming in Python at the University of Reading.
-
-A Version 1 QR code generator implementation that encodes text strings into scannable 21×21 QR codes using byte mode encoding, Reed-Solomon error correction, and masking patterns.
+Course project for Programming in Python at the University of Reading. Version 1 QR code generator implementation that encodes text strings into scannable 21×21 QR codes using byte mode encoding, Reed-Solomon error correction, and masking patterns.
 
 ## Project Structure
 
